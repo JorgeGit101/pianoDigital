@@ -4,7 +4,7 @@ from scipy.io.wavfile import write
 from time import sleep
 
 
-class Nota():
+class Nota:
     """
     Esta clase puede crear objetos tono que tienen un sonido dentro de la escala musical
     y guardarlos en un archivo con formato .wav
@@ -32,7 +32,6 @@ class Nota():
             'LA': 440,
             'SI': 493.88
         }
-
 
     def _freq_nota(self):
         """
@@ -89,7 +88,7 @@ class Nota():
         el tono en un archivo wave (.wav) en directorio actal
         :return:
         """
-        if self._freq_nota() == None:
+        if self._freq_nota() is None:
             print('La configuración actual no permite ejecutar este método')
         else:
             print('Espera unos segundos')
@@ -97,3 +96,4 @@ class Nota():
             write(nombre, 44100, self.vibrar())
             sleep(3)
             print('Tono listo ' + nombre + '. En el directorio actual')
+
